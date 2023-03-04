@@ -1,0 +1,51 @@
+[
+	{
+		"title": "MCD Model",
+		"items": [
+			{
+				"title": "Website",
+				"icon": "web",
+				"link": "#"
+			},
+			{
+				"title": "Github",
+				"icon": "github",
+				"link": "#"
+			},
+			{
+				"title": "Info",
+				"icon": "info",
+				"content": {
+					"title": "MCD Model",
+					"img": "mcd",
+					"description": "📊 A web app to create MCD models made with sveltekit.",
+					"langs": ["Svelte", "CSS", "HTML", "Javascript", "Vite"]
+				}
+			}
+		]
+	},
+	{
+		"title": "MCD Model 2",
+		"items": [
+			{
+				"title": "Website",
+				"icon": "web",
+				"link": "#"
+			},
+			{
+				"title": "Github",
+				"icon": "github",
+				"link": "#"
+			},
+			{
+				"title": "Info",
+				"icon": "info",
+				"content": {
+					"title": "MCD Model",
+					"description": "📊 A web app to create MCD models made with sveltekit.",
+					"langs": ["Svelte", "CSS", "HTML", "Javascript", "Vite"]
+				}
+			}
+		]
+	}
+]
