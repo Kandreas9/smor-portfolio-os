@@ -87,15 +87,12 @@ audio
 
 	.desktopHeaderWave {
 		display: inline-block;
+		transform-origin: 50% 50%;
+
 		animation: wobbleInf 2s ease 0s infinite normal forwards;
 	}
 
 	@keyframes wobbleInf {
-		0%,
-		100% {
-			transform-origin: 50% 50%;
-		}
-
 		15% {
 			transform: rotate(-15deg);
 		}
