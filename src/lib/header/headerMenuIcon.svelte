@@ -10,7 +10,14 @@
 	class="headerMenuIcon"
 	on:click
 >
-	<img class="icon" draggable="false" src="/{iconName}.svg" alt={iconName} />
+	<img
+		class="icon"
+		height="35px"
+		width="35px"
+		draggable="false"
+		src="/{iconName}.svg"
+		alt={iconName}
+	/>
 </button>
 
 <style>
