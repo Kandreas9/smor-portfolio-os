@@ -1,0 +1,18 @@
+[
+	{
+		"side": "left",
+		"message": "My name is Andreas Karydopoulos, also known as Smor or Kandreas9."
+	},
+	{
+		"side": "right",
+		"message": "As a frontend React developer, I enjoy working with technologies like Deno, Svelte, and React."
+	},
+	{
+		"side": "left",
+		"message": "I prioritize open-mindedness and continuous learning, regularly experimenting with new technologies and exploring various frameworks."
+	},
+	{
+		"side": "right",
+		"message": "During my spare time, I enjoy drawing, playing video games, and working on personal programming projects."
+	}
+]

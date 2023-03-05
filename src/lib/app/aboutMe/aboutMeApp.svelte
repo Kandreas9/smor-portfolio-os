@@ -1,39 +1,26 @@
 <script>
 	import AboutMeMessage from './aboutMeMessage.svelte';
+	import aboutMessages from '../../../utils/aboutMessages.json';
 
-	let messages = [
-		{
-			side: 'left',
-			message: 'My name is Andreas Karydopoulos, also known as Smor or Kandreas9.'
-		},
-		{
-			side: 'right',
-			message:
-				'As a frontend React developer, I enjoy working with technologies like Deno, Svelte, and React.'
-		},
-		{
-			side: 'left',
-			message:
-				'I prioritize open-mindedness and continuous learning, regularly experimenting with new technologies and exploring various frameworks.'
-		},
-		{
-			side: 'right',
-			message:
-				'During my spare time, I enjoy drawing, playing video games, and working on personal programming projects.'
+	let messages = [aboutMessages[0]];
+
+	const pushNextMessage = (i) => {
+		if (aboutMessages.length !== i + 1) {
+			messages = [...messages, aboutMessages[i + 1]];
 		}
-	];
+	};
 </script>
 
 <section class="aboutMeAppWrapper">
 	<div class="aboutHeader">
 		<h2>About Me</h2>
 
-		<img loading="lazy" src="./me.svg" alt="me" />
+		<img loading="lazy" src="/svg/me.svg" alt="me" />
 	</div>
 
 	<div class="aboutMessagesWrapper">
 		{#each messages as message, i}
-			<AboutMeMessage side={message.side} message={message.message} delay={1000 * i} />
+			<AboutMeMessage {pushNextMessage} {i} side={message.side} message={message.message} />
 		{/each}
 	</div>
 </section>

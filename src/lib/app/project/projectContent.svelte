@@ -12,7 +12,7 @@
 	</div>
 
 	<div class="projectContentMain">
-		<img src="{content.img}.webp" alt={content.img} />
+		<img loading="lazy" src="/images/{content.img}.webp" alt={content.img} />
 
 		<p>{content.description}</p>
 	</div>

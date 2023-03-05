@@ -8,8 +8,6 @@
 		$desktopApps = $desktopApps.filter((item) => {
 			return item !== appName;
 		});
-
-		console.log($desktopApps);
 	};
 
 	export let zIndex;
@@ -40,7 +38,6 @@
 	};
 
 	const touchMove = (e) => {
-		console.log(e);
 		let clientX = e.targetTouches[0].clientX;
 		let clientY = e.targetTouches[0].clientY;
 
@@ -83,8 +80,6 @@
 			dragX + rect.width >= window.innerWidth ||
 			dragY + target.offsetParent.offsetHeight >= window.innerHeight
 		) {
-			console.log('height: ', window.innerHeight);
-			console.log('n: ', dragY + e.target.offsetParent.clientHeight);
 			return;
 		}
 

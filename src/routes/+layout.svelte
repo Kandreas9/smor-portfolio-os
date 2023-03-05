@@ -25,7 +25,7 @@
 	}
 </script>
 
-<svelte:window on:load={window.scrollTo(1, 0)} bind:innerWidth={$innerWidth} />
+<svelte:window bind:innerWidth={$innerWidth} />
 
 <svelte:head>
 	<meta name="theme-color" content={themeColor} />

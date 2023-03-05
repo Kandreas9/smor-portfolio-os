@@ -1,18 +1,18 @@
 [
 	{
-		"name": "about.svg",
+		"name": "/svg/about.svg",
 		"type": "image"
 	},
 	{
-		"name": "phone.svg",
+		"name": "/svg/phone.svg",
 		"type": "image"
 	},
 	{
-		"name": "project.svg",
+		"name": "/svg/project.svg",
 		"type": "image"
 	},
 	{
-		"name": "setting.svg",
+		"name": "/svg/setting.svg",
 		"type": "image"
 	}
 ]

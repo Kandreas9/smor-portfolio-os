@@ -15,7 +15,7 @@
 		height="35px"
 		width="35px"
 		draggable="false"
-		src="/{iconName}.svg"
+		src="/svg/{iconName}.svg"
 		alt={iconName}
 	/>
 </button>

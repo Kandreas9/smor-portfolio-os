@@ -4,7 +4,7 @@
 </script>
 
 <div class="iconWrapper">
-	<img class={$theme} src="/{iconName}.svg" alt="{iconName} folder" />
+	<img loading="lazy" class={$theme} src="/svg/{iconName}.svg" alt="{iconName} folder" />
 </div>
 
 <style>

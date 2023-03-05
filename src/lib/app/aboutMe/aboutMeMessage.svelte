@@ -3,30 +3,40 @@
 
 	export let side;
 	export let message;
-	export let delay;
+	export let i;
+	export let pushNextMessage = () => {};
+
+	let audio;
 
 	$: left = side == 'left';
 	$: right = side == 'right';
 	$: xFlyAxis = right ? 300 : -300;
 
 	const handleIntroEnd = () => {
-		const audio = new Audio('/notif.ogg');
 		audio.volume = 0.05;
 		audio.play();
+
+		pushNextMessage(i);
 	};
 </script>
 
 <div
-	in:fly={{ duration: 300, delay: 550 + delay, x: xFlyAxis }}
+	in:fly={{ duration: 300, delay: 550, x: xFlyAxis }}
 	on:introend={handleIntroEnd}
 	class="aboutMeMessage"
 	class:left
 	class:right
 >
 	{message}
+
+	<audio src="/sound/notif.mp3" bind:this={audio} />
 </div>
 
 <style>
+	audio {
+		display: none;
+	}
+
 	.aboutMeMessage {
 		background: var(--primary-color);
 		padding: 1rem;
