@@ -15,8 +15,6 @@
 	const handleIntroEnd = () => {
 		audio.volume = 0.05;
 		audio.play();
-
-		pushNextMessage(i);
 	};
 </script>
 
@@ -29,7 +27,7 @@
 >
 	{message}
 
-	<audio src="/sound/notif.mp3" bind:this={audio} />
+	<audio on:ended={() => pushNextMessage(i)} src="/sound/notif.mp3" bind:this={audio} />
 </div>
 
 <style>
