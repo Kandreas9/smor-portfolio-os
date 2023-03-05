@@ -40,6 +40,7 @@
 	{#each fileNames as file}
 		<link rel="preload" href={file.name} as={file.type} />
 	{/each}
+	<link rel="preload" href="../app.css" as="style" />
 </svelte:head>
 
 <div class="container">
