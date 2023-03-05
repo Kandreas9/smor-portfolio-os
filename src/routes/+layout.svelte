@@ -49,16 +49,11 @@
 </svelte:head>
 
 <div class="container">
-	{#if loading}
-		<main>
-			<h2 class="desktopHeader">Loading ...</h2>
-		</main>
-	{:else}
-		<main>
-			<h2 class="desktopHeader">Smor <span class="desktopHeaderWave">👋</span></h2>
-			<slot />
-		</main>
-
+	<main>
+		<h2 class="desktopHeader">Smor <span class="desktopHeaderWave">👋</span></h2>
+		<slot />
+	</main>
+	{#if !loading}
 		<HeaderMenu />
 	{/if}
 </div>
