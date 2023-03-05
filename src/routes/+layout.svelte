@@ -1,4 +1,7 @@
 <script>
+	import '@fontsource/open-sans/400.css';
+	import '@fontsource/open-sans/700.css';
+	import '../../static/global.css';
 	import { onMount } from 'svelte';
 	import HeaderMenu from '../lib/header/headerMenu.svelte';
 	import { innerWidth, theme } from '../store.js';
@@ -26,7 +29,7 @@
 
 <svelte:head>
 	<meta name="theme-color" content={themeColor} />
-	<script>
+	<script defer>
 		if (document) {
 			const storedTheme = localStorage.getItem('theme');
 			if (storedTheme) {

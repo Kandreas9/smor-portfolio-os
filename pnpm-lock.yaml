@@ -1,12 +1,16 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@fontsource/open-sans': ^4.5.14
   '@sveltejs/adapter-auto': ^2.0.0
   '@sveltejs/kit': ^1.5.0
   prettier: ^2.8.0
   prettier-plugin-svelte: ^2.8.1
   svelte: ^3.54.0
   vite: ^4.0.0
+
+dependencies:
+  '@fontsource/open-sans': 4.5.14
 
 devDependencies:
   '@sveltejs/adapter-auto': 2.0.0_@sveltejs+kit@1.8.5
@@ -215,6 +219,10 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@fontsource/open-sans/4.5.14:
+    resolution: {integrity: sha512-mBXIIETBlW8q/ocuUN0hyGow2iuf75hQEHQt8R/RJ/HcphVbLg8KB7pHYGbFGDqs75W+SWvTC7JkVeAjT65BuQ==}
+    dev: false
 
   /@jridgewell/sourcemap-codec/1.4.14:
     resolution: {integrity: sha512-XPSJHWmi394fuUuzDnGz1wiKqWfo1yXecHQMRf2l6hztTO+nPru658AyDngaBe7isIxEkRsPR3FZh+s7iVa4Uw==}
