@@ -39,10 +39,6 @@
 </section>
 
 <style>
-	.aboutMeAppWrapper {
-		height: 20rem;
-		width: 30rem;
-	}
 	.aboutHeader {
 		display: flex;
 		flex-direction: column;

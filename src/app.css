@@ -9,6 +9,7 @@ body {
 	background-color: var(--primary-color);
 	height: 100vh;
 	color: var(--color);
+	padding-bottom: env(safe-area-inset-bottom);
 }
 
 .dark {

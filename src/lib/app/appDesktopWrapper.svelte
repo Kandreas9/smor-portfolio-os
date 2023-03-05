@@ -12,6 +12,7 @@
 		console.log($desktopApps);
 	};
 
+	export let zIndex;
 	export let xPosition = '200px';
 	export let yPosition = '200px';
 	let xOffset;
@@ -111,7 +112,7 @@
 	});
 </script>
 
-<div style="top: {yPosition}; left: {xPosition}" class="app">
+<div style="top: {yPosition}; left: {xPosition}; z-index: {zIndex}" class="app">
 	<div
 		on:touchstart={handleTouchStart}
 		on:touchend={handleTouchDrop}
@@ -132,7 +133,6 @@
 <style>
 	.appMenu {
 		position: relative;
-		z-index: 5;
 		background: var(--light-color);
 		padding: 0.5rem;
 		display: flex;
@@ -171,5 +171,7 @@
 		background-color: var(--dark-color);
 		padding: 2rem;
 		overflow-y: auto;
+		height: 25rem;
+		width: 30rem;
 	}
 </style>
