@@ -34,6 +34,8 @@
 	<HeaderMenu />
 </div>
 
+<div style="position: fixed, bottom: 0" />
+
 <style>
 	.container {
 		touch-action: none;
