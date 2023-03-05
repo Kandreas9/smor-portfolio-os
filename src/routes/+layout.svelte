@@ -1,7 +1,7 @@
 <script>
 	import '@fontsource/open-sans/400.css';
 	import '@fontsource/open-sans/700.css';
-	// import '../../static/global.css';
+	import '../../static/global.css';
 	import { onMount } from 'svelte';
 	import HeaderMenu from '../lib/header/headerMenu.svelte';
 	import { innerWidth, theme } from '../store.js';
@@ -45,11 +45,6 @@
 			}
 		}
 	</script>
-	<style>
-		* {
-			font-family: 'Open Sans', sans-serif;
-		}
-	</style>
 	{#each fileNames as file}
 		<link rel="preload" href={file.name} as={file.type} />
 	{/each}

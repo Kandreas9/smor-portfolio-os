@@ -1,3 +1,7 @@
+<script context="module">
+	export const prerender = true;
+</script>
+
 <script>
 	import AppMobile from '../lib/app/appMobile.svelte';
 	import AppsDesktop from '../lib/app/appsDesktop.svelte';
