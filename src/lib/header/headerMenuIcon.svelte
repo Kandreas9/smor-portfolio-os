@@ -1,6 +1,5 @@
 <script>
 	import { fade } from 'svelte/transition';
-	import { theme } from '../../store.js';
 
 	export let iconName = 'about';
 </script>

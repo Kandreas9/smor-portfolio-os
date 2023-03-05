@@ -36,6 +36,7 @@
 
 <style>
 	.container {
+		touch-action: none;
 		display: flex;
 		flex-direction: column;
 		height: 100%;

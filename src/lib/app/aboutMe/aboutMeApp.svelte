@@ -24,19 +24,25 @@
 	];
 </script>
 
-<section class="aboutHeader">
-	<h2>About Me</h2>
+<section class="aboutMeAppWrapper">
+	<div class="aboutHeader">
+		<h2>About Me</h2>
 
-	<img src="./me.svg" alt="me" />
+		<img src="./me.svg" alt="me" />
+	</div>
+
+	<div class="aboutMessagesWrapper">
+		{#each messages as message, i}
+			<AboutMeMessage side={message.side} message={message.message} delay={1000 * i} />
+		{/each}
+	</div>
 </section>
 
-<div class="aboutMessagesWrapper">
-	{#each messages as message, i}
-		<AboutMeMessage side={message.side} message={message.message} delay={1000 * i} />
-	{/each}
-</div>
-
 <style>
+	.aboutMeAppWrapper {
+		height: 20rem;
+		width: 30rem;
+	}
 	.aboutHeader {
 		display: flex;
 		flex-direction: column;

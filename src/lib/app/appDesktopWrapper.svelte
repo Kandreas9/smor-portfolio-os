@@ -1,4 +1,5 @@
 <script>
+	import { onDestroy, onMount } from 'svelte';
 	import { desktopApps } from '../../store.js';
 
 	export let appName;
@@ -15,43 +16,112 @@
 	export let yPosition = '200px';
 	let xOffset;
 	let yOffset;
+	let rect;
+	let target;
 
 	const setPosition = (x, y) => {
 		xPosition = `${x}px`;
 		yPosition = `${y}px`;
 	};
 
-	function dragstart(e) {
-		document.onmousemove = move;
-		document.ontouchmove = move;
+	const handleTouchStart = (e) => {
+		document.ontouchmove = touchMove;
+
+		target = e.target;
+		//Get offsetX and offsetY which is the position inside the div that i have clicked bc for SOME reason touch es dont have it.
+		rect = e.target.getBoundingClientRect();
+		xOffset = e.touches[0].clientX - window.pageXOffset - rect.left;
+		yOffset = e.touches[0].clientY - window.pageYOffset - rect.top;
+	};
+
+	const handleTouchDrop = () => {
+		document.ontouchmove = '';
+	};
+
+	const touchMove = (e) => {
+		console.log(e);
+		let clientX = e.targetTouches[0].clientX;
+		let clientY = e.targetTouches[0].clientY;
+
+		let dragX = clientX - xOffset;
+		let dragY = clientY - yOffset;
+
+		if (
+			dragY <= 0 ||
+			dragX <= 0 ||
+			dragX + rect.width >= window.innerWidth ||
+			dragY + target.offsetParent.offsetHeight >= window.innerHeight
+		) {
+			return;
+		}
+
+		setPosition(dragX, dragY);
+	};
+
+	const handleMouseStart = (e) => {
+		document.onmousemove = mouseMove;
+
+		target = e.target;
+		rect = e.target.getBoundingClientRect();
+
 		xOffset = e.offsetX;
 		yOffset = e.offsetY;
-	}
+	};
 
-	function drop() {
+	const handleMouseDrop = () => {
 		document.onmousemove = '';
-		document.ontouchmove = '';
-	}
+	};
 
-	function move(e) {
-		console.log(xPosition);
-		console.log(e);
-		let dragx = e.pageX - xOffset;
-		let dragy = e.pageY - yOffset;
+	const mouseMove = (e) => {
+		let dragX = e.pageX - xOffset;
+		let dragY = e.pageY - yOffset;
 
-		setPosition(dragx, dragy);
-	}
+		if (
+			dragY <= 0 ||
+			dragX <= 0 ||
+			dragX + rect.width >= window.innerWidth ||
+			dragY + target.offsetParent.offsetHeight >= window.innerHeight
+		) {
+			console.log('height: ', window.innerHeight);
+			console.log('n: ', dragY + e.target.offsetParent.clientHeight);
+			return;
+		}
+
+		setPosition(dragX, dragY);
+	};
+
+	const handleMouseLeave = (e) => {
+		if (
+			e.clientY <= 0 ||
+			e.clientX <= 0 ||
+			e.clientX >= window.innerWidth ||
+			e.clientY >= window.innerHeight
+		) {
+			document.onmousemove = '';
+			document.ontouchmove = '';
+		}
+	};
+
+	onMount(() => {
+		document.addEventListener('mouseleave', handleMouseLeave);
+	});
+
+	onDestroy(() => {
+		document.removeEventListener('mouseleave', handleMouseLeave);
+	});
 </script>
 
 <div style="top: {yPosition}; left: {xPosition}" class="app">
 	<div
-		on:touchstart={dragstart}
-		on:touchend={drop}
-		on:mousedown={dragstart}
-		on:mouseup={drop}
+		on:touchstart={handleTouchStart}
+		on:touchend={handleTouchDrop}
+		on:mousedown={handleMouseStart}
+		on:mouseup={handleMouseDrop}
 		class="appMenu"
 	>
-		<button on:click={handleClose}>CLOSE</button>
+		<button on:click={handleClose}>
+			<span> x </span>
+		</button>
 	</div>
 
 	<div class="appDesktopWrapper">
@@ -63,15 +133,36 @@
 	.appMenu {
 		position: relative;
 		z-index: 5;
-		background: pink;
+		background: var(--light-color);
 		padding: 0.5rem;
+		display: flex;
+		align-items: center;
 		border-radius: 0.9rem 0.9rem 0 0;
+	}
+
+	.appMenu button {
+		width: 0.8rem;
+		height: 0.8rem;
+		border-radius: 50%;
+		background: red;
+	}
+
+	.appMenu button span {
+		width: 0.8rem;
+		height: 0.8rem;
+		font-size: 0.6rem;
+		display: none;
+	}
+
+	.appMenu button:hover span {
+		display: block;
 	}
 
 	.app {
 		position: absolute;
 		top: 50px;
 		left: 50px;
+		user-select: none;
 	}
 
 	.appDesktopWrapper {
@@ -79,6 +170,6 @@
 		position: relative;
 		background-color: var(--dark-color);
 		padding: 2rem;
-		overflow-y: scroll;
+		overflow-y: auto;
 	}
 </style>

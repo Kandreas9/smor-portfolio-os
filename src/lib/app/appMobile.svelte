@@ -35,12 +35,6 @@
 		width: 100%;
 		height: 100%;
 		padding: 2rem;
-		overflow-y: scroll;
-	}
-
-	@media (min-width: 769px) {
-		.appMobile {
-			display: none;
-		}
+		overflow-y: auto;
 	}
 </style>
