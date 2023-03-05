@@ -47,8 +47,6 @@
 
 <style>
 	header {
-		position: fixed;
-		bottom: 0;
 		flex: 1;
 		align-self: center;
 		margin-bottom: 1rem;
