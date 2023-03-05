@@ -1,9 +1,15 @@
 <script>
+	import { onMount } from 'svelte';
 	import HeaderMenu from '../lib/header/headerMenu.svelte';
 	import { innerWidth, theme } from '../store.js';
 	import fileNames from '../utils/fileNames.json';
 
 	let themeColor = '#271644';
+	let loading = true;
+
+	onMount(() => {
+		loading = false;
+	});
 
 	$: {
 		if ($theme === 'light') {
@@ -43,7 +49,7 @@
 
 <div class="container">
 	<main>
-		<h2 class="desktopHeader">Smor <span class="desktopHeaderWave">👋</span></h2>
+		<h2 class="desktopHeader">Smor <span class:desktopHeaderWave={!loading}>👋</span></h2>
 		<slot />
 	</main>
 
