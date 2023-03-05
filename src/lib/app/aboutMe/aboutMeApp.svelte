@@ -28,7 +28,7 @@
 	<div class="aboutHeader">
 		<h2>About Me</h2>
 
-		<img src="./me.svg" alt="me" />
+		<img loading="lazy" src="./me.svg" alt="me" />
 	</div>
 
 	<div class="aboutMessagesWrapper">

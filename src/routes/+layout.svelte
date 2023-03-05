@@ -3,6 +3,7 @@
 	import '../app.css';
 	import HeaderMenu from '../lib/header/headerMenu.svelte';
 	import { innerWidth, theme } from '../store.js';
+	import fileNames from '../utils/fileNames.json';
 
 	let themeColor = '#271644';
 	let loading = true;
@@ -42,6 +43,9 @@
 			}
 		}
 	</script>
+	{#each fileNames as file}
+		<link rel="preload" href={file.name} as={file.type} />
+	{/each}
 </svelte:head>
 
 <div class="container">
