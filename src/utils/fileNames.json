@@ -1,0 +1,62 @@
+[
+	{
+		"name": "about.svg",
+		"type": "image"
+	},
+	{
+		"name": "email.svg",
+		"type": "image"
+	},
+	{
+		"name": "error.svg",
+		"type": "image"
+	},
+	{
+		"name": "exit.svg",
+		"type": "image"
+	},
+	{
+		"name": "folder.svg",
+		"type": "image"
+	},
+	{
+		"name": "github.svg",
+		"type": "image"
+	},
+	{
+		"name": "info.svg",
+		"type": "image"
+	},
+	{
+		"name": "linkedin.svg",
+		"type": "image"
+	},
+	{
+		"name": "mcd.webp",
+		"type": "image"
+	},
+	{
+		"name": "me.svg",
+		"type": "image"
+	},
+	{
+		"name": "notif.ogg",
+		"type": "audio"
+	},
+	{
+		"name": "phone.svg",
+		"type": "image"
+	},
+	{
+		"name": "project.svg",
+		"type": "image"
+	},
+	{
+		"name": "setting.svg",
+		"type": "image"
+	},
+	{
+		"name": "web.svg",
+		"type": "image"
+	}
+]

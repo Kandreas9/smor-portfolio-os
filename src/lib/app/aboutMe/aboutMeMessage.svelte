@@ -10,7 +10,7 @@
 	$: xFlyAxis = right ? 300 : -300;
 
 	const handleIntroEnd = () => {
-		const audio = new Audio('/mixkit-correct-answer-tone-2870.wav');
+		const audio = new Audio('/notif.ogg');
 		audio.volume = 0.05;
 		audio.play();
 	};
