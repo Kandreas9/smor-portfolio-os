@@ -71,6 +71,7 @@
 		padding: 1rem 1rem;
 		border: 1px solid var(--light-color);
 		box-shadow: 0px 2.76626px 10.3735px 6.91564px rgba(0, 0, 0, 0.25);
+		position: fixed;
 		z-index: 10;
 		transition: width 500ms ease-in-out, border-radius 500ms ease-in-out,
 			padding 500ms ease-in-out;
