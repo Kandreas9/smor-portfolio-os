@@ -34,11 +34,8 @@
 	<HeaderMenu />
 </div>
 
-<div style="position: fixed, bottom: 0" />
-
 <style>
 	.container {
-		touch-action: none;
 		display: flex;
 		flex-direction: column;
 		height: 100%;
