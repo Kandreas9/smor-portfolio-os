@@ -4,7 +4,7 @@
 	import { innerWidth } from '../store.js';
 </script>
 
-<svelte:window bind:innerWidth={$innerWidth} />
+<svelte:window on:load={window.scrollTo(1, 0)} bind:innerWidth={$innerWidth} />
 
 <svelte:head>
 	<script>
@@ -36,6 +36,7 @@
 
 <style>
 	.container {
+		touch-action: none;
 		display: flex;
 		flex-direction: column;
 		height: 100%;
