@@ -1,5 +1,4 @@
 <script>
-	import '../app.css';
 	import HeaderMenu from '../lib/header/headerMenu.svelte';
 	import { innerWidth, theme } from '../store.js';
 	import fileNames from '../utils/fileNames.json';
@@ -40,7 +39,6 @@
 	{#each fileNames as file}
 		<link rel="preload" href={file.name} as={file.type} />
 	{/each}
-	<link rel="preload" href="../app.css" as="style" />
 </svelte:head>
 
 <div class="container">
@@ -51,8 +49,6 @@
 
 	<HeaderMenu />
 </div>
-
-audio
 
 <style>
 	.container {
