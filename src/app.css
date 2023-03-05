@@ -7,7 +7,7 @@
 
 body {
 	background-color: var(--primary-color);
-	height: 100dvh;
+	height: 100vh;
 	color: var(--color);
 }
 
@@ -37,4 +37,10 @@ button {
 	border: none;
 	font-size: 1rem;
 	color: var(--color);
+}
+
+@supports (height: 100dvh) {
+	body {
+		height: 100dvh;
+	}
 }

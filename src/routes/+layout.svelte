@@ -1,12 +1,25 @@
 <script>
 	import '../app.css';
 	import HeaderMenu from '../lib/header/headerMenu.svelte';
-	import { innerWidth } from '../store.js';
+	import { innerWidth, theme } from '../store.js';
+
+	let themeColor = '#271644';
+
+	$: {
+		if ($theme === 'light') {
+			themeColor = '#949494';
+		} else if ($theme === 'ambient') {
+			themeColor = '#BD8D76';
+		} else if ($theme === 'dark') {
+			themeColor = '#271644';
+		}
+	}
 </script>
 
 <svelte:window on:load={window.scrollTo(1, 0)} bind:innerWidth={$innerWidth} />
 
 <svelte:head>
+	<meta name="theme-color" content={themeColor} />
 	<script>
 		if (document) {
 			const storedTheme = localStorage.getItem('theme');
@@ -36,7 +49,6 @@
 
 <style>
 	.container {
-		touch-action: none;
 		display: flex;
 		flex-direction: column;
 		height: 100%;
