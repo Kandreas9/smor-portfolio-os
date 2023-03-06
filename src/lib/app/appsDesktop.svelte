@@ -14,11 +14,11 @@
 	};
 </script>
 
-{#each $desktopApps as desktopAppName, i}
+{#each $desktopApps as desktopAppName, i (desktopAppName)}
 	<AppDesktopWrapper
 		zIndex={1 + i}
-		xPosition={20 * i + 'px'}
-		yPosition={20 * i + 'px'}
+		xInitial={20 * i + 'px'}
+		yInitial={20 * i + 'px'}
 		appName={desktopAppName}
 	>
 		<svelte:component this={options[desktopAppName]} />

@@ -11,8 +11,10 @@
 	};
 
 	export let zIndex;
-	export let xPosition = '200px';
-	export let yPosition = '200px';
+	export let xInitial;
+	export let yInitial;
+	let xPosition = xInitial;
+	let yPosition = yInitial;
 	let xOffset;
 	let yOffset;
 	let rect;
@@ -136,6 +138,9 @@
 	}
 
 	.appMenu button {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		width: 0.8rem;
 		height: 0.8rem;
 		border-radius: 50%;
@@ -143,8 +148,6 @@
 	}
 
 	.appMenu button span {
-		width: 0.8rem;
-		height: 0.8rem;
 		font-size: 0.6rem;
 		display: none;
 	}
