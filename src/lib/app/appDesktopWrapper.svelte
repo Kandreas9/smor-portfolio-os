@@ -75,13 +75,15 @@
 	};
 
 	const handleTouchStart = (e) => {
-		document.ontouchmove = touchMove;
+		if (!isResizing) {
+			document.ontouchmove = touchMove;
 
-		target = e.target;
-		//Get offsetX and offsetY which is the position inside the div that i have clicked bc for SOME reason touch es dont have it.
-		rect = e.target.getBoundingClientRect();
-		xOffset = e.touches[0].clientX - window.pageXOffset - rect.left;
-		yOffset = e.touches[0].clientY - window.pageYOffset - rect.top;
+			target = e.target;
+			//Get offsetX and offsetY which is the position inside the div that i have clicked bc for SOME reason touch es dont have it.
+			rect = e.target.getBoundingClientRect();
+			xOffset = e.touches[0].clientX - window.pageXOffset - rect.left;
+			yOffset = e.touches[0].clientY - window.pageYOffset - rect.top;
+		}
 	};
 
 	const handleTouchDrop = () => {
@@ -108,13 +110,15 @@
 	};
 
 	const handleMouseStart = (e) => {
-		document.onmousemove = mouseMove;
+		if (!isResizing) {
+			document.onmousemove = mouseMove;
 
-		target = e.target;
-		rect = e.target.getBoundingClientRect();
+			target = e.target;
+			rect = e.target.getBoundingClientRect();
 
-		xOffset = e.offsetX;
-		yOffset = e.offsetY;
+			xOffset = e.offsetX;
+			yOffset = e.offsetY;
+		}
 	};
 
 	const handleMouseDrop = () => {
@@ -260,6 +264,8 @@
 		min-width: 15rem;
 		min-height: 10rem;
 		user-select: none;
+		box-shadow: 0px 2.76626px 10.3735px 6.91564px rgba(0, 0, 0, 0.25);
+		border-radius: 0.9rem;
 	}
 
 	.appDesktopWrapper {
