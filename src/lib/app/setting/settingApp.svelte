@@ -34,6 +34,12 @@
 </section>
 
 <style>
+	.settingAppContentWrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
 	h2 {
 		text-align: center;
 		font-size: 2rem;
