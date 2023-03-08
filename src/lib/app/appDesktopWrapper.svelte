@@ -77,6 +77,7 @@
 	const handleTouchStart = (e) => {
 		if (!isResizing) {
 			document.ontouchmove = touchMove;
+			document.ontouchend = handleTouchDrop;
 
 			target = e.target;
 			//Get offsetX and offsetY which is the position inside the div that i have clicked bc for SOME reason touch es dont have it.
@@ -88,6 +89,7 @@
 
 	const handleTouchDrop = () => {
 		document.ontouchmove = '';
+		document.ontouchend = '';
 	};
 
 	const touchMove = (e) => {
@@ -112,6 +114,7 @@
 	const handleMouseStart = (e) => {
 		if (!isResizing) {
 			document.onmousemove = mouseMove;
+			document.onmouseup = handleMouseDrop;
 
 			target = e.target;
 			rect = e.target.getBoundingClientRect();
@@ -123,6 +126,7 @@
 
 	const handleMouseDrop = () => {
 		document.onmousemove = '';
+		document.onmouseup = '';
 	};
 
 	const mouseMove = (e) => {
@@ -170,13 +174,7 @@
 	on:mousedown={() => (focusedWindow = appName)}
 	on:touchstart={() => (focusedWindow = appName)}
 >
-	<div
-		on:touchstart={handleTouchStart}
-		on:touchend={handleTouchDrop}
-		on:mousedown={handleMouseStart}
-		on:mouseup={handleMouseDrop}
-		class="appMenu"
-	>
+	<div on:touchstart={handleTouchStart} on:mousedown={handleMouseStart} class="appMenu">
 		<button on:click={handleClose}>
 			<span> x </span>
 		</button>
