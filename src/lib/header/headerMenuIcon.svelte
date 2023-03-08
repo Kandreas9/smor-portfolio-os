@@ -2,6 +2,7 @@
 	import { fade } from 'svelte/transition';
 
 	export let iconName = 'about';
+	export let popupName;
 </script>
 
 <button
@@ -10,6 +11,7 @@
 	class="headerMenuIcon"
 	on:click
 >
+	<div class="popover">{popupName}</div>
 	<img
 		class="icon"
 		height="35px"
@@ -32,12 +34,57 @@
 		align-items: center;
 		height: 3.1rem;
 		width: 3.1rem;
+		position: relative;
 	}
 
 	.headerMenuIcon img {
 		user-select: none;
 		height: 35px;
 		color: var(--primary-color);
+	}
+
+	.popover {
+		display: none;
+		position: absolute;
+		top: -4.5rem;
+		background: var(--primary-color);
+		padding: 0.5rem 1rem;
+		justify-content: center;
+		align-items: center;
+		height: 2.5rem;
+		width: 8rem;
+		border-radius: 10px;
+		z-index: 20;
+		font-size: 0.8rem;
+		border: 1px solid var(--light-color);
+	}
+
+	.headerMenuIcon:hover .popover {
+		display: flex;
+	}
+
+	.popover::before {
+		content: '';
+		width: 0;
+		height: 0;
+		border-left: 20px solid transparent;
+		border-right: 20px solid transparent;
+		border-top: 24px solid var(--light-color);
+		position: absolute;
+		bottom: -1.5rem;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.popover::after {
+		content: '';
+		position: absolute;
+		bottom: -1.5rem;
+		left: 50%;
+		transform: translateX(-50%);
+		border-left: 18px solid transparent;
+		border-right: 18px solid transparent;
+		border-top: 24px solid var(--primary-color);
 	}
 
 	:global(.dark) .icon {

@@ -1,8 +1,6 @@
 <script>
 	import { theme } from '../../../store';
 	import { _, locale } from 'svelte-i18n';
-
-	console.log($locale);
 </script>
 
 <section class="settingAppWrapper">
