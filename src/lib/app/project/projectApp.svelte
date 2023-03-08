@@ -4,14 +4,16 @@
 	import ProjectView from './projectView.svelte';
 	import { _ } from 'svelte-i18n';
 
-	let items;
+	let itemIndex;
+	$: items = projectsData[$_('project.projectLang')][itemIndex]?.items;
 
-	const handleProjectView = (projectItems) => {
-		items = projectItems;
+	$: handleProjectView = (index) => {
+		itemIndex = index;
 	};
 
 	const handleCloseView = () => {
 		items = null;
+		itemIndex = null;
 	};
 </script>
 
@@ -19,8 +21,8 @@
 	<h2>{$_('project.title')}</h2>
 
 	<div class="projectsWrapper">
-		{#each projectsData[$_('project.projectLang')] as projectData}
-			<button on:click={() => handleProjectView(projectData.items)} class="projectWrapper">
+		{#each projectsData[$_('project.projectLang')] as projectData, i}
+			<button on:click={() => handleProjectView(i)} class="projectWrapper">
 				<Icon iconName="folder" />
 				<div class="projectTitle">{projectData.title}</div>
 			</button>

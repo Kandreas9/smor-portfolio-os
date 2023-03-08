@@ -6,14 +6,16 @@
 	export let items;
 	export let handleCloseView;
 
-	let content;
+	let itemIndex;
+	$: content = items[itemIndex]?.content;
 
-	const handleProjectContent = (projectContent) => {
-		content = projectContent;
+	$: handleProjectContent = (index) => {
+		itemIndex = index;
 	};
 
 	const handleCloseContent = () => {
 		content = null;
+		itemIndex = null;
 	};
 </script>
 
@@ -23,14 +25,14 @@
 	</div>
 
 	<div class="projectWrapper">
-		{#each items as item}
+		{#each items as item, i}
 			{#if item.link}
-				<a class="projectItem" href={item.link}>
+				<a target="_blank" rel="noopener noreferrer" class="projectItem" href={item.link}>
 					<Icon iconName={item.icon} />
 					<div>{item.title}</div>
 				</a>
 			{:else}
-				<button on:click={() => handleProjectContent(item.content)} class="projectItem">
+				<button on:click={() => handleProjectContent(i)} class="projectItem">
 					<Icon iconName={item.icon} />
 					<div>{item.title}</div>
 				</button>
