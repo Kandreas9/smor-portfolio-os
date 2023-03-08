@@ -13,6 +13,7 @@
 	"setting": {
 		"title": "Settings",
 		"themeTitle": "Theme",
-		"languageTitle": "Language"
+		"languageTitle": "Language",
+		"menuAnimationTitle": "Menu Animation Type"
 	}
 }

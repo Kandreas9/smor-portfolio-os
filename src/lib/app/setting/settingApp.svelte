@@ -1,5 +1,5 @@
 <script>
-	import { theme } from '../../../store';
+	import { theme, menuAnimationType } from '../../../store';
 	import { _, locale } from 'svelte-i18n';
 </script>
 
@@ -26,6 +26,15 @@
 			>
 				<option value="en">English</option>
 				<option value="fr">French</option>
+			</select>
+		</label>
+
+		<label class="option">
+			{$_('setting.menuAnimationTitle')}
+
+			<select bind:value={$menuAnimationType}>
+				<option value="minimal">Minimal</option>
+				<option value="animated">Animated</option>
 			</select>
 		</label>
 	</div>

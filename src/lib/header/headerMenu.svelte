@@ -21,28 +21,28 @@
 			{#if !$mobileApp}
 				<li class="headerMenuItem">
 					<HeaderMenuIcon
-						popupName="About Me"
+						popupName="aboutMe"
 						iconName="about"
 						on:click={() => handleIconClick('about')}
 					/>
 				</li>
 				<li>
 					<HeaderMenuIcon
-						popupName="Projects"
+						popupName="project"
 						iconName="project"
 						on:click={() => handleIconClick('project')}
 					/>
 				</li>
 				<li>
 					<HeaderMenuIcon
-						popupName="Phone"
+						popupName="phone"
 						iconName="phone"
 						on:click={() => handleIconClick('phone')}
 					/>
 				</li>
 				<li>
 					<HeaderMenuIcon
-						popupName="Settings"
+						popupName="setting"
 						iconName="setting"
 						on:click={() => handleIconClick('setting')}
 					/>

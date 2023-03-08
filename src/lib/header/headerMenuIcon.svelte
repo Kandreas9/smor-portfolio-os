@@ -1,28 +1,43 @@
 <script>
 	import { fade } from 'svelte/transition';
+	import { _ } from 'svelte-i18n';
+	import { menuAnimationType } from '../../store.js';
 
 	export let iconName = 'about';
 	export let popupName;
 </script>
 
-<button
-	in:fade={{ duration: 550 }}
-	aria-label="open {iconName} app"
-	class="headerMenuIcon"
-	on:click
->
-	<div class="popover">{popupName}</div>
-	<img
-		class="icon"
-		height="35px"
-		width="35px"
-		draggable="false"
-		src="/svg/{iconName}.svg"
-		alt={iconName}
-	/>
-</button>
+<div class="headerMenuIconWrapper">
+	<div class="popover">{$_(`${popupName}.title`)}</div>
+
+	<button
+		in:fade={{ duration: 550 }}
+		aria-label="open {iconName} app"
+		class="headerMenuIcon"
+		class:headerMenuAnimatedIcon={$menuAnimationType === 'animated'}
+		on:click
+	>
+		<img
+			class="icon"
+			height="35px"
+			width="35px"
+			draggable="false"
+			src="/svg/{iconName}.svg"
+			alt={iconName}
+		/>
+	</button>
+</div>
 
 <style>
+	.headerMenuIconWrapper {
+		position: relative;
+		height: 3.1rem;
+		width: 3.1rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
 	.headerMenuIcon {
 		cursor: pointer;
 		background-color: var(--light-color);
@@ -34,7 +49,12 @@
 		align-items: center;
 		height: 3.1rem;
 		width: 3.1rem;
-		position: relative;
+		transition: transform 0.5s;
+		z-index: 25;
+	}
+
+	.headerMenuAnimatedIcon:hover {
+		transform: scale(1.5);
 	}
 
 	.headerMenuIcon img {
@@ -55,11 +75,12 @@
 		width: 8rem;
 		border-radius: 10px;
 		z-index: 20;
-		font-size: 0.8rem;
 		border: 1px solid var(--light-color);
+		transform: scale(0.8);
+		font-size: 1rem;
 	}
 
-	.headerMenuIcon:hover .popover {
+	.headerMenuIconWrapper:hover .popover {
 		display: flex;
 	}
 
