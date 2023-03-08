@@ -26,6 +26,11 @@
 	let desktopWindow;
 	let windowWidth = '500px';
 	let windowHeight = '500px';
+	let oldWindowWidth;
+	let oldWindowHeight;
+	let oldXPosition;
+	let oldYPosition;
+	let isMaximised = false;
 
 	const handleResizing = (e) => {
 		currentResizer = e.target;
@@ -75,7 +80,7 @@
 	};
 
 	const handleTouchStart = (e) => {
-		if (!isResizing) {
+		if (!isResizing && !isMaximised) {
 			document.ontouchmove = touchMove;
 			document.ontouchend = handleTouchDrop;
 
@@ -112,7 +117,7 @@
 	};
 
 	const handleMouseStart = (e) => {
-		if (!isResizing) {
+		if (!isResizing && !isMaximised) {
 			document.onmousemove = mouseMove;
 			document.onmouseup = handleMouseDrop;
 
@@ -157,6 +162,35 @@
 		}
 	};
 
+	const handleMaximiseMinimise = () => {
+		if (!isMaximised) {
+			oldWindowWidth = windowWidth;
+			oldWindowHeight = windowHeight;
+			oldYPosition = yPosition;
+			oldXPosition = xPosition;
+
+			desktopWindow.style.transition =
+				'width .5s ease-out, height .5s ease-out, top .5s ease-out, left .5s ease-out';
+
+			yPosition = '0px';
+			xPosition = '0px';
+			windowWidth = '100%';
+			windowHeight = '100%';
+
+			isMaximised = true;
+		} else {
+			windowWidth = oldWindowWidth;
+			windowHeight = oldWindowHeight;
+			xPosition = oldXPosition;
+			yPosition = oldYPosition;
+
+			setTimeout(() => {
+				isMaximised = false;
+				desktopWindow.style.transition = null;
+			}, 500);
+		}
+	};
+
 	onMount(() => {
 		focusedWindow = appName;
 		document.addEventListener('mouseleave', handleMouseLeave);
@@ -175,22 +209,28 @@
 	on:touchstart={() => (focusedWindow = appName)}
 >
 	<div on:touchstart={handleTouchStart} on:mousedown={handleMouseStart} class="appMenu">
-		<button on:click={handleClose}>
+		<button class="close" on:click={handleClose}>
 			<span> x </span>
 		</button>
+
+		<button class="maximise" on:click={handleMaximiseMinimise}><span>^</span></button>
 	</div>
 
 	<div class="appDesktopWrapper">
 		<slot />
 	</div>
 
-	<div on:mousedown={handleResizing} class="resizer-lt resizer" />
-	<div on:mousedown={handleResizing} class="resizer-rt resizer" />
-	<div on:mousedown={handleResizing} class="resizer-lb resizer" />
-	<div on:mousedown={handleResizing} class="resizer-rb resizer" />
+	<div class:disabled={isMaximised} on:mousedown={handleResizing} class="resizer-lt resizer" />
+	<div class:disabled={isMaximised} on:mousedown={handleResizing} class="resizer-rt resizer" />
+	<div class:disabled={isMaximised} on:mousedown={handleResizing} class="resizer-lb resizer" />
+	<div class:disabled={isMaximised} on:mousedown={handleResizing} class="resizer-rb resizer" />
 </div>
 
 <style>
+	.disabled {
+		display: none;
+	}
+
 	.resizer {
 		background: pink;
 		width: 0.7rem;
@@ -233,7 +273,7 @@
 		flex: none;
 	}
 
-	.appMenu button {
+	.appMenu .close {
 		margin-left: 0.5rem;
 		display: flex;
 		justify-content: center;
@@ -242,6 +282,17 @@
 		height: 0.8rem;
 		border-radius: 50%;
 		background: red;
+	}
+
+	.appMenu .maximise {
+		margin-left: 0.5rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 0.8rem;
+		height: 0.8rem;
+		border-radius: 50%;
+		background: #48dd48;
 	}
 
 	.appMenu button span {
