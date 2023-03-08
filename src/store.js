@@ -4,7 +4,11 @@ import { browser } from '$app/environment';
 export const mobileApp = writable('');
 export const desktopApps = writable([]);
 export const innerWidth = writable(0);
-export const menuAnimationType = writable('minimal');
+export const menuAnimationType = !browser
+	? writable('minimal')
+	: localStorage.getItem('menuAnimation')
+	? writable(localStorage.getItem('menuAnimation'))
+	: writable('minimal');
 
 const createTheme = () => {
 	let defaultTheme = 'light';

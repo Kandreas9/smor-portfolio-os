@@ -32,7 +32,10 @@
 		<label class="option">
 			{$_('setting.menuAnimationTitle')}
 
-			<select bind:value={$menuAnimationType}>
+			<select
+				bind:value={$menuAnimationType}
+				on:change={(e) => localStorage.setItem('menuAnimation', e.target.value)}
+			>
 				<option value="minimal">Minimal</option>
 				<option value="animated">Animated</option>
 			</select>

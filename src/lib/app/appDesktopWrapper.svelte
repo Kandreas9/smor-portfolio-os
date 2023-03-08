@@ -259,6 +259,8 @@
 		position: absolute;
 		top: 50px;
 		left: 50px;
+		max-width: 100%;
+		max-height: 100%;
 		min-width: 15rem;
 		min-height: 10rem;
 		user-select: none;
