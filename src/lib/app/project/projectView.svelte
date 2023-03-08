@@ -50,7 +50,7 @@
 		left: 0;
 		position: absolute;
 		background: var(--dark-color);
-		height: auto;
+		height: 100%;
 		width: 100%;
 	}
 

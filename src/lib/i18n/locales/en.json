@@ -1,0 +1,18 @@
+{
+	"aboutMe": {
+		"title": "About Me",
+		"messagesLang": "en"
+	},
+	"project": {
+		"title": "Projects",
+		"projectLang": "en"
+	},
+	"phone": {
+		"title": "Phone"
+	},
+	"setting": {
+		"title": "Settings",
+		"themeTitle": "theme",
+		"languageTitle": "Language"
+	}
+}

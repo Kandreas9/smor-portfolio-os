@@ -1,4 +1,5 @@
 <script>
+	/* import { afterUpdate } from 'svelte'; */
 	import { fly } from 'svelte/transition';
 
 	export let side;
@@ -16,6 +17,10 @@
 		audio.volume = 0.05;
 		audio.play();
 	};
+
+	// afterUpdate(() => {
+	// 	pushNextMessage(i);
+	// });
 </script>
 
 <div

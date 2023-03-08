@@ -1,51 +1,256 @@
-[
-	{
-		"title": "MCD Model",
-		"items": [
-			{
-				"title": "Website",
-				"icon": "web",
-				"link": "#"
-			},
-			{
-				"title": "Github",
-				"icon": "github",
-				"link": "#"
-			},
-			{
-				"title": "Info",
-				"icon": "info",
-				"content": {
-					"title": "MCD Model",
-					"img": "mcd",
-					"description": "📊 A web app to create MCD models made with sveltekit.",
-					"langs": ["Svelte", "CSS", "HTML", "Javascript", "Vite"]
+{
+	"en": [
+		{
+			"title": "Infopediaparents",
+			"items": [
+				{
+					"title": "Website",
+					"icon": "web",
+					"link": "https://infopediaparents.fr/"
+				},
+				{
+					"title": "Github",
+					"icon": "github",
+					"link": "https://github.com/Kandreas9/infopediaparents-client"
+				},
+				{
+					"title": "Info",
+					"icon": "info",
+					"content": {
+						"title": "Infopediaparents",
+						"img": "infopediaparents",
+						"description": "🏥 A blog like website filled with usefull articles, mostly created for the clients of Dr. Georges Karydopoulos",
+						"langs": ["Svelte", "CSS", "HTML", "Javascript", "Vite", "Typescript"]
+					}
 				}
-			}
-		]
-	},
-	{
-		"title": "MCD Model 2",
-		"items": [
-			{
-				"title": "Website",
-				"icon": "web",
-				"link": "#"
-			},
-			{
-				"title": "Github",
-				"icon": "github",
-				"link": "#"
-			},
-			{
-				"title": "Info",
-				"icon": "info",
-				"content": {
-					"title": "MCD Model",
-					"description": "📊 A web app to create MCD models made with sveltekit.",
-					"langs": ["Svelte", "CSS", "HTML", "Javascript", "Vite"]
+			]
+		},
+		{
+			"title": "Dynamic Profile README",
+			"items": [
+				{
+					"title": "Github Action",
+					"icon": "github",
+					"link": "https://github.com/marketplace/actions/dynamic-profile-readme"
+				},
+				{
+					"title": "Github",
+					"icon": "github",
+					"link": "https://github.com/Kandreas9/dynamic-profile-readme"
+				},
+				{
+					"title": "Info",
+					"icon": "info",
+					"content": {
+						"title": "Dynamic Profile README",
+						"img": "dynamicprofile",
+						"description": "🌈 A github action with widgets to dynamically built your github profile README",
+						"langs": ["Typescript", "Node", "Github Actions"]
+					}
 				}
-			}
-		]
-	}
-]
+			]
+		},
+		{
+			"title": "Audio Visualiser",
+			"items": [
+				{
+					"title": "CDN",
+					"icon": "cdn",
+					"link": "https://cdn.jsdelivr.net/gh/Kandreas9/audio-visualiser@main/dist/audio-visualiser.js"
+				},
+				{
+					"title": "Github",
+					"icon": "github",
+					"link": "https://github.com/Kandreas9/audio-visualiser"
+				},
+				{
+					"title": "Info",
+					"icon": "info",
+					"content": {
+						"title": "Audio Visualiser",
+						"img": "audiovisualiser",
+						"description": "🎧 A blazingly fast audio visualiser web component",
+						"langs": ["Javascript", "Esbuild"]
+					}
+				}
+			]
+		},
+		{
+			"title": "MCD Model",
+			"items": [
+				{
+					"title": "Website",
+					"icon": "web",
+					"link": "https://mcd-model.netlify.app/"
+				},
+				{
+					"title": "Github",
+					"icon": "github",
+					"link": "https://github.com/Kandreas9/mcd-model"
+				},
+				{
+					"title": "Info",
+					"icon": "info",
+					"content": {
+						"title": "MCD Model",
+						"img": "mcd",
+						"description": "📊 A web app to create MCD models made with sveltekit.",
+						"langs": ["Svelte", "Javascript", "CSS", "HTML", "Vite"]
+					}
+				}
+			]
+		},
+		{
+			"title": "User Avatar",
+			"items": [
+				{
+					"title": "CDN",
+					"icon": "cdn",
+					"link": "https://cdn.jsdelivr.net/gh/Kandreas9/user-avatar@main/dist/user-avatar.js"
+				},
+				{
+					"title": "Github",
+					"icon": "github",
+					"link": "https://github.com/Kandreas9/user-avatar"
+				},
+				{
+					"title": "Info",
+					"icon": "info",
+					"content": {
+						"title": "User Avatar",
+						"img": "useravatar",
+						"description": "👤 A web component for creating user avatars.",
+						"langs": ["Javascript", "Esbuild"]
+					}
+				}
+			]
+		}
+	],
+	"fr": [
+		{
+			"title": "Infopediaparents",
+			"items": [
+				{
+					"title": "Site Web",
+					"icon": "web",
+					"link": "https://infopediaparents.fr/"
+				},
+				{
+					"title": "Github",
+					"icon": "github",
+					"link": "https://github.com/Kandreas9/infopediaparents-client"
+				},
+				{
+					"title": "Info",
+					"icon": "info",
+					"content": {
+						"title": "Infopediaparents",
+						"img": "infopediaparents",
+						"description": "🏥 Un site web de type blog rempli d'articles utiles, principalement créés pour les clients du Dr Georges Karydopoulos",
+						"langs": ["Svelte", "CSS", "HTML", "Javascript", "Vite", "Typescript"]
+					}
+				}
+			]
+		},
+		{
+			"title": "Profil README Dynamique",
+			"items": [
+				{
+					"title": "Action Github",
+					"icon": "github",
+					"link": "https://github.com/marketplace/actions/dynamic-profile-readme"
+				},
+				{
+					"title": "Github",
+					"icon": "github",
+					"link": "https://github.com/Kandreas9/dynamic-profile-readme"
+				},
+				{
+					"title": "Info",
+					"icon": "info",
+					"content": {
+						"title": "Profil README Dynamique",
+						"img": "dynamicprofile",
+						"description": "🌈 Une action Github avec des widgets pour créer dynamiquement votre profil README sur Github",
+						"langs": ["Typescript", "Node", "Actions Github"]
+					}
+				}
+			]
+		},
+		{
+			"title": "Visualiseur Audio",
+			"items": [
+				{
+					"title": "CDN",
+					"icon": "cdn",
+					"link": "https://cdn.jsdelivr.net/gh/Kandreas9/audio-visualiser@main/dist/audio-visualiser.js"
+				},
+				{
+					"title": "Github",
+					"icon": "github",
+					"link": "https://github.com/Kandreas9/audio-visualiser"
+				},
+				{
+					"title": "Info",
+					"icon": "info",
+					"content": {
+						"title": "Visualiseur Audio",
+						"img": "audiovisualiser",
+						"description": "🎧 Un composant web de visualiseur audio incroyablement rapide",
+						"langs": ["Javascript", "Esbuild"]
+					}
+				}
+			]
+		},
+		{
+			"title": "Modèle MCD",
+			"items": [
+				{
+					"title": "Site Web",
+					"icon": "web",
+					"link": "https://mcd-model.netlify.app/"
+				},
+				{
+					"title": "Github",
+					"icon": "github",
+					"link": "https://github.com/Kandreas9/mcd-model"
+				},
+				{
+					"title": "Info",
+					"icon": "info",
+					"content": {
+						"title": "Modèle MCD",
+						"img": "mcd",
+						"description": "📊 Une application web pour créer des modèles MCD réalisée avec Sveltekit.",
+						"langs": ["Svelte", "Javascript", "CSS", "HTML", "Vite"]
+					}
+				}
+			]
+		},
+		{
+			"title": "Avatar d'utilisateur",
+			"items": [
+				{
+					"title": "CDN",
+					"icon": "cdn",
+					"link": "https://cdn.jsdelivr.net/gh/Kandreas9/user-avatar@main/dist/user-avatar.js"
+				},
+				{
+					"title": "Github",
+					"icon": "github",
+					"link": "https://github.com/Kandreas9/user-avatar"
+				},
+				{
+					"title": "Info",
+					"icon": "info",
+					"content": {
+						"title": "Avatar d'utilisateur",
+						"img": "useravatar",
+						"description": "👤 Un composant web pour créer des avatars d'utilisateurs.",
+						"langs": ["Javascript", "Esbuild"]
+					}
+				}
+			]
+		}
+	]
+}

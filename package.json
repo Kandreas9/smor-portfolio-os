@@ -20,6 +20,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@fontsource/open-sans": "^4.5.14"
+		"@fontsource/open-sans": "^4.5.14",
+		"svelte-i18n": "^3.6.0"
 	}
 }

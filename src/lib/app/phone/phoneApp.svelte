@@ -1,5 +1,6 @@
 <script>
 	import Icon from '../../icon.svelte';
+	import { _ } from 'svelte-i18n';
 
 	const phoneLinks = [
 		{
@@ -18,7 +19,7 @@
 </script>
 
 <section class="phoneAppWrapper">
-	<h2>Phone</h2>
+	<h2>{$_('phone.title')}</h2>
 
 	<div class="phoneAppContent">
 		{#each Array(13) as _, index}

@@ -1,25 +1,30 @@
 <script>
 	import AboutMeMessage from './aboutMeMessage.svelte';
 	import aboutMessages from '../../../utils/aboutMessages.json';
+	import { _ } from 'svelte-i18n';
 
-	let messages = [aboutMessages[0]];
+	$: messages = {
+		en: [aboutMessages['en'][0]],
+		fr: [aboutMessages['fr'][0]]
+	};
 
-	const pushNextMessage = (i) => {
-		if (aboutMessages.length !== i + 1) {
-			messages = [...messages, aboutMessages[i + 1]];
+	$: pushNextMessage = (i) => {
+		if (aboutMessages[$_('aboutMe.messagesLang')].length !== i + 1) {
+			messages['en'] = [...messages['en'], aboutMessages['en'][i + 1]];
+			messages['fr'] = [...messages['fr'], aboutMessages['fr'][i + 1]];
 		}
 	};
 </script>
 
 <section class="aboutMeAppWrapper">
 	<div class="aboutHeader">
-		<h2>About Me</h2>
+		<h2>{$_('aboutMe.title')}</h2>
 
 		<img loading="lazy" src="/svg/me.svg" alt="me" />
 	</div>
 
 	<div class="aboutMessagesWrapper">
-		{#each messages as message, i}
+		{#each messages[$_('aboutMe.messagesLang')] as message, i}
 			<AboutMeMessage {pushNextMessage} {i} side={message.side} message={message.message} />
 		{/each}
 	</div>

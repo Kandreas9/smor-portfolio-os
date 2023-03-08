@@ -2,6 +2,7 @@
 	import projectsData from '../../../utils/projectData.json';
 	import Icon from '../../icon.svelte';
 	import ProjectView from './projectView.svelte';
+	import { _ } from 'svelte-i18n';
 
 	let items;
 
@@ -15,10 +16,10 @@
 </script>
 
 <section class="projectAppWrapper">
-	<h2>Projects</h2>
+	<h2>{$_('project.title')}</h2>
 
 	<div class="projectsWrapper">
-		{#each projectsData as projectData}
+		{#each projectsData[$_('project.projectLang')] as projectData}
 			<button on:click={() => handleProjectView(projectData.items)} class="projectWrapper">
 				<Icon iconName="folder" />
 				<div class="projectTitle">{projectData.title}</div>

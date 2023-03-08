@@ -1,18 +1,38 @@
-[
-	{
-		"side": "left",
-		"message": "My name is Andreas Karydopoulos, also known as Smor or Kandreas9."
-	},
-	{
-		"side": "right",
-		"message": "As a frontend React developer, I enjoy working with technologies like Deno, Svelte, and React."
-	},
-	{
-		"side": "left",
-		"message": "I prioritize open-mindedness and continuous learning, regularly experimenting with new technologies and exploring various frameworks."
-	},
-	{
-		"side": "right",
-		"message": "During my spare time, I enjoy drawing, playing video games, and working on personal programming projects."
-	}
-]
+{
+	"en": [
+		{
+			"side": "left",
+			"message": "My name is Andreas Karydopoulos, also known as Smor or Kandreas9."
+		},
+		{
+			"side": "right",
+			"message": "As a frontend React developer, I enjoy working with technologies like Deno, Svelte, and React."
+		},
+		{
+			"side": "left",
+			"message": "I prioritize open-mindedness and continuous learning, regularly experimenting with new technologies and exploring various frameworks."
+		},
+		{
+			"side": "right",
+			"message": "During my spare time, I enjoy drawing, playing video games, and working on personal programming projects."
+		}
+	],
+	"fr": [
+		{
+			"side": "left",
+			"message": "Mon nom est Andreas Karydopoulos, également connu sous le nom de Smor ou Kandreas9."
+		},
+		{
+			"side": "right",
+			"message": "En tant que développeur React frontend, j'aime travailler avec des technologies telles que Deno, Svelte et React."
+		},
+		{
+			"side": "left",
+			"message": "Je donne la priorité à l'ouverture d'esprit et à l'apprentissage continu, expérimentant régulièrement de nouvelles technologies et explorant divers frameworks."
+		},
+		{
+			"side": "right",
+			"message": "Pendant mon temps libre, j'aime dessiner, jouer à des jeux vidéo et travailler sur des projets de programmation personnels."
+		}
+	]
+}
