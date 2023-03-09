@@ -209,11 +209,15 @@
 	on:touchstart={() => (focusedWindow = appName)}
 >
 	<div on:touchstart={handleTouchStart} on:mousedown={handleMouseStart} class="appMenu">
-		<button class="close" on:click={handleClose}>
+		<button class="close" on:click={handleClose} aria-label="close window">
 			<span> x </span>
 		</button>
 
-		<button class="maximise" on:click={handleMaximiseMinimise}><span>^</span></button>
+		<button
+			class="maximise"
+			on:click={handleMaximiseMinimise}
+			aria-label="maximise/minimise window"><span>^</span></button
+		>
 	</div>
 
 	<div class="appDesktopWrapper">

@@ -52,7 +52,7 @@
 
 <div class="container">
 	<main>
-		<h2 class="desktopHeader">Smor <span class:desktopHeaderWave={!loading}>👋</span></h2>
+		<h1 class="desktopHeader">Smor <span class:desktopHeaderWave={!loading}>👋</span></h1>
 		<slot />
 	</main>
 
