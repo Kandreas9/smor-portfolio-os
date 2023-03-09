@@ -6,17 +6,6 @@
 	import HeaderMenu from '../lib/header/headerMenu.svelte';
 	import { innerWidth, theme } from '../store.js';
 	import fileNames from '../utils/fileNames.json';
-	import { browser } from '$app/environment';
-	import '$lib/i18n'; // Import to initialize. Important :)
-	import { locale, waitLocale } from 'svelte-i18n';
-
-	export const load = async () => {
-		if (browser) {
-			const lang = localStorage.getItem('lang');
-			locale.set(lang ? lang : 'en');
-		}
-		await waitLocale();
-	};
 
 	let themeColor = '#271644';
 	let loading = true;
